@@ -7,16 +7,16 @@
   to continue. Especially when using these tools across multiple hosts, this can be quite annoying and tedious. There are a few
   workarounds for this.
 
-  > Workaround 1: 	Via the registry – using the REG ADD command in the custom script to ensure that the EULA was flagged as 
+  > Workaround 1:  Via the registry – using the REG ADD command in the custom script to ensure that the EULA was flagged as 
                    being accepted. Below are the registry entries:
                        - [HKEY_CURRENT_USER\Software\Sysinternals\PsService]”EulaAccepted”=dword:00000001
                        - [HKEY_CURRENT_USER\Software\Sysinternals\PsList]”EulaAccepted”=dword:00000001
 
-				   By using the REG ADD command, the entries are added for whichever user or service account runs the
-				   script on the fly. However, this is a little inelegant – leading us to …
+                   By using the REG ADD command, the entries are added for whichever user or service account runs the
+                   script on the fly. However, this is a little inelegant – leading us to …
 
-  > Workaround 2:	Use the –accepteula switch when running the tools so that the EULA acceptance is not displayed when
-				the script is launched via Task Scheduler.
+  > Workaround 2:  Use the –accepteula switch when running the tools so that the EULA acceptance is not displayed when
+                   the script is launched via Task Scheduler.
   
   However, these can be just as much of a headache in some cases (i.e. if the user forgets to pass the 'accepteula' flag when 
   launching one of the utilities or having to *manually* add/set registry keys for each tool, for each user, across each host).
