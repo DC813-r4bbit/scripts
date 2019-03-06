@@ -32,7 +32,7 @@
   is implemented sooner rather than later... (https://products.office.com/en-us/business/office-365-roadmap?featureid=16401)
 	
 .NOTES
-  Version:        1.0
+  Version:        1.1
   Author:         Brian Etchieson
   Creation Date:  AUG/23/2018
   Purpose/Change: Initial script development
@@ -47,7 +47,7 @@ Write-Host "`nExtract Original URL from Safelinks URL`n"
 
 $safelinks_url = Read-Host "Enter Safelinks URL"
 
-$trimmed_url = $safelinks_url.Replace("https://na01.safelinks.protection.outlook.com/?url=","")
+$trimmed_url = $safelinks_url -Replace('https:\/\/.*\.safelinks\.protection\.outlook\.com\/\?url=' , '')
 
 $encoded_url = $trimmed_url.Substring(0, $trimmed_url.IndexOf('&data='))
 
